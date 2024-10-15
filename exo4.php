@@ -1,41 +1,24 @@
 <h1>Exercice4</h1>
+<p>Ecrire un algorithme permettant de savoir is une phrase est est Palindrome</p>
 
 <h2>Résultat</h2>
 
 <?php
-$phrase1 = "A man, a plan, a canal, Panam";
+$phrase = "engage le jeu que je le gagne" ;
+//function estPalindrome($phrase) {
+    // lire la espace en minuscules
+$phrase = strtolower($phrase);
 
-$phrase2 = "Engage le jeu que je le gagne";
+//remplacer les espaces par des non espaces
+$phrase = str_replace(' ', '', $phrase);
 
-function  est_palindrome($phrase) {
-    $phrase = strtolower(str_replace ('','', $phrase));
-
-    if($phrase == strrev ($phrase)){
-
-        return "C'est un palidrome";
-    }
-
-    return "ce n'est pas un palindrome";
-     
+//lire à la phrase à l'envers
+$phraseInverse = strrev($phrase);
 
 
-
+if ($phrase == $phraseInverse) {
+echo "la phrase « $phrase » est  Palindrome";
+} else {
+echo "la phrase « $phrase » est pas Palindrome";
 }
-
- echo est_palindrome($phrase1);
-
-     
-     
-    
-
-
-    // foreach ($phrase as $phrase) {
-
-    //     if (est_paliindrome($phrase)) {
-
-    //     echo "La phrase « " . $phrase ." » est plindrome.<br>";
-    // } else {
-    //     echo "La phrase « " . $phrase . " » nest pas plaindrom.<br>";   
-    // }
-    //  }
 ?>
